@@ -1,0 +1,77 @@
+{
+  "name": "aws-tts",
+  "version": "1.4.0",
+  "description": "CLI tool to convert text to speech using AWS Polly",
+  "bin": {
+    "aws-tts": "./tts.js"
+  },
+  "scripts": {
+    "lint": "standard --fix --verbose",
+    "test": "JASMINE_CONFIG_PATH=test/jasmine.json nyc jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eheikes/aws-tts.git"
+  },
+  "keywords": [
+    "aws",
+    "amazon",
+    "polly",
+    "text",
+    "speech",
+    "tts"
+  ],
+  "author": "Eric Heikes <eheikes@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eheikes/aws-tts/issues"
+  },
+  "homepage": "https://github.com/eheikes/aws-tts#readme",
+  "devDependencies": {
+    "jasmine": "^2.6.0",
+    "nyc": "^11.2.1",
+    "proxyquire": "^1.8.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "aws-sdk": "^2.7.27",
+    "debug": "^3.1.0",
+    "fs-extra": "^2.0.0",
+    "got": "^6.7.1",
+    "html-entities": "^1.2.1",
+    "minimist": "^1.2.0",
+    "ora": "^1.2.0",
+    "path": "^0.12.7",
+    "sax": "^1.2.4",
+    "striptags": "^3.1.1",
+    "tempfile": "^1.1.1",
+    "textchunk": "^1.1.0",
+    "unescape": "^1.0.1",
+    "utf8": "^3.0.0"
+  },
+  "standard": {
+    "env": {
+      "jasmine": true,
+      "node": true
+    }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": false,
+    "lines": 95,
+    "statements": 95,
+    "functions": 95,
+    "branches": 95,
+    "include": [
+      "*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": false,
+    "all": false,
+    "report-dir": "./coverage"
+  }
+}
